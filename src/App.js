@@ -3,12 +3,14 @@ import getData from './Data/testDocument';
 import SearchBox from './searchBox/searchBox';
 import Document from './document/document';
 import React, { useState } from 'react';
+import {getArrayOfNTrueValuesFactory, cloneArray} from './reusableCode/arrays'
 
 import './App.css';
 
 function App() {
-  let content = getData();
+  
   const [filter, setFilter] = useState('');
+  const [content, setContent] = useState(getData());
   const initialFilter = filter;
   function searchHandler(filterText){
     // console.log(e.target.innerText)
@@ -18,12 +20,16 @@ function App() {
     if (isActive) console.log('Search box activated');
     if (!isActive) console.log('Search box disactivated');
   }
+  function navigationHandler(command){
+    if (command === 'save') {console.log(content)}
+  }
   return (
     <div className="container">
       <SearchBox 
         searchBoxActiveHandler={searchBoxActiveHandler.bind(this)}
         searchHandler={searchHandler.bind(this)}
         initialValue = {initialFilter}
+        appNavigationHandler = {navigationHandler}
       >
       </SearchBox>
       <Document 
@@ -33,6 +39,7 @@ function App() {
         isHidden = {false}
         filter = {filter}
         childContainFilterHandler = {()=>{}}
+        infromParentAboutContentChange = {(newContent)=>{ console.log(newContent); setContent(newContent)}}
       >
       </Document>
     </div>
