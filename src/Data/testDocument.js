@@ -51,5 +51,6 @@ const doc = {
 }
 
 export default function getData(){
+    console.log('DOC')
     return doc;
 }

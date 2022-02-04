@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 
+
+
+
   function SearchBox(props){
     const searchHandler = props.searchHandler;
     const [currentValue, setCurrentValue] = useState(props.initialValue)
     const searchBoxActiveHandler = props.searchBoxActiveHandler;
+    const informAppComponent = props.appNavigationHandler;
     function activateSearchBox(){searchBoxActiveHandler(true);}
     function disactivateSearchBox(){searchBoxActiveHandler(false);}
     function searchChanged(e){
@@ -11,6 +15,7 @@ import React, { useState } from 'react';
         setCurrentValue(data);
         searchHandler(e.target.innerText);
     }
+    function save(){informAppComponent('save')}
     return (
         <div className="search-box">
             <div className="symbol center">&#x1F50D;</div>
@@ -18,8 +23,11 @@ import React, { useState } from 'react';
                 onInput={searchChanged}
                 onFocus = {activateSearchBox}
                 onBlur = {disactivateSearchBox}
-            >{currentValue}
+                suppressContentEditableWarning={true}
+                // innerText = {currentValue}
+            >
             </div>
+            <div className="button" onClick={save}>&#x1f4be;</div>
         </div>
     )
   }
