@@ -56,11 +56,9 @@ function Document(props){
             description: descriptionBox.current.innerHTML,
             content: cloneArray(content)
         }
-        console.log(obj) 
         setDescription(obj.description);
         setTitle(obj.title);
         setContent(obj.content);
-        console.log(content)
         informParentAboutOwnContentChangeHandler(obj);
     }
 
@@ -71,10 +69,16 @@ function Document(props){
             let contentClone = JSON.parse(JSON.stringify(content))
             contentClone[index] = newDocumentContent;
             setContent(contentClone);
-            console.log(contentClone)
-            console.log(content)
-            setTimeout(()=>{console.log(content)}, 100)
-            console.log(contentClone === content)
+            setContent(contentClone);
+            setTimeout(()=>{console.log(content)}, 1000)
+
+
+            let obj = {
+                title: titleBox.current.innerHTML,
+                description: descriptionBox.current.innerHTML,
+                content: contentClone
+            }
+            informParentAboutOwnContentChangeHandler(obj)
         }
     }
 
