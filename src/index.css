@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  --menu-width: 25px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  width:100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.document{
+  position: relative;
+  width: 95%;
+  display: flex;
+  padding: 10px;
+  min-height: 80px;
+  margin: 5px;
+}
+.hidden-document{
+  height: 80px;
+  overflow: hidden;
+}
+.none-document{
+  display:none;
+}
+.hidden{
+  display:none;
+}
+.description{
+  background-color: #bbb;
+  color: black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.border{
+  border: solid thin black;
+  border-radius: 8px;
+}
+
+.title{
+  font-weight: bold;
+  width: 80%;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.col-doc{
+  width: calc( 100% - var(--menu-width));
+}
+.col-1{width: 8.33%}
+.col-2{width: 16.66%}
+.col-3{width: 25%}
+.col-4{width: 33.33%}
+.col-5{width: 41.66%}
+.col-6{width: 50%}
+.col-7{width: 58.33%}
+.col-8{width: 66.67%}
+.col-9{width: 75%}
+.col-10{width: 83.33%}
+.col-11{width: 91.67%}
+.col-12{width: 100%}
+.menu{
+  width: 20%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.button{
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 5px;
+  transition: 0.3s;
+  color:black;
+  padding: 1px;
+  margin: 2px;
+  box-shadow: inset 0px 0px 7px 0px #000000;
+}
+.button:hover{
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.button:active{
+  background-color: yellow;
+}
+.button-green:{
+  background-color: green;
+  color: white;
+}
+.button-red:{
+  background-color: red;
+  color: white;
+}
+
+
+
+.search-box{
+  display: flex;
+  width: 90%;
+  max-width: 300px;
+
+}
+.text-field{
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+  
+  border-radius: 5px;
+  border: solid thin black;
+}
+.symbol{
+  width: 20px;
+  height: 20px;
+  background-color: #aaa;
+  border-radius: 5px;
+  transition: 0.3s;
+  color:black;
+}
+.strike-through{
+  position: absolute;
+  font-weight: bold;
+  transform: rotate(30deg);
+  color: yellow;
 }
