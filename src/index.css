@@ -1,6 +1,10 @@
 *{
   --menu-width: 25px;
 }
+#root{
+  width: 100vw;
+  height: 100vh;
+}
 
 body{
   width:100%;
@@ -12,6 +16,7 @@ body{
   display: flex;
   justify-content: center;
   align-content: center;
+  align-items: center;
 }
 
 .container{
@@ -99,11 +104,11 @@ body{
 .button:active{
   background-color: yellow;
 }
-.button-green:{
+.button-green{
   background-color: green;
   color: white;
 }
-.button-red:{
+.button-red{
   background-color: red;
   color: white;
 }
@@ -137,4 +142,32 @@ body{
   font-weight: bold;
   transform: rotate(30deg);
   color: yellow;
+}
+
+
+
+
+
+
+
+
+/**************MENU*******************/
+
+
+.shutter{
+  position: absolute; top:0; left: 0; width: 100vw; height: 100vh; background-color: rgba(255,255,255,0.5);
+  z-index: 10;
+}
+.popup-window{position:  relative;width: 400px; height: 300px;background-color: #bbb; border-radius: 7px;
+overflow: hidden;}
+.titlebar {position:  relative; width: 100%; height: 32px; background-color:#77a; color:white;}
+.window-title{color:white;}
+
+.window-files{background-color:white;border:solid thin #ccc; color: black; height: 200px; margin: 10px;
+border-radius: 5px;}
+ 
+.row{display: flex;}
+.text-field-menu{margin: 10px; height:  30px; width: 100%; background-color:white; border-radius: 5px;}
+.button-big{
+  width: auto;
 }

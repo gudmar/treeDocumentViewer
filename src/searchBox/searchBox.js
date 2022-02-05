@@ -15,7 +15,8 @@ import React, { useState } from 'react';
         setCurrentValue(data);
         searchHandler(e.target.innerText);
     }
-    function save(){informAppComponent('save')}
+    function saveFile(){informAppComponent('save')}
+    function saveStorage(){informAppComponent('saveStorage')}
     return (
         <div className="search-box">
             <div className="symbol center">&#x1F50D;</div>
@@ -27,7 +28,8 @@ import React, { useState } from 'react';
                 // innerText = {currentValue}
             >
             </div>
-            <div className="button" onClick={save}>&#x1f4be;</div>
+            <div className="button" onClick={saveFile}>&#x1f4be;</div>
+            <div className="button" onClick={saveStorage}>SS</div>
         </div>
     )
   }
